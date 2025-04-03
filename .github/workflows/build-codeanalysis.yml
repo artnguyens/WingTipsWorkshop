@@ -1,0 +1,25 @@
+name: Build SQL project with code analysis
+
+on:
+  push:
+    branches: ["main"]
+    pats:
+      - 'Lab1/WingTipsWorkshop/**'
+    pull_request:
+      branches: ["main"]
+      paths:
+        - 'Lab1/WingTipsWorkshop/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Build
+      run: dotnet build Lab1/WingtipsWorkshop.sqlproj
+/p:RunSqlCodeAnalysis=true
