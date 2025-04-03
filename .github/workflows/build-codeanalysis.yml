@@ -4,11 +4,11 @@ on:
   push:
     branches: ["main"]
     pats:
-      - 'Wingtips/**'
+      - 'Lab1/WingTipsWorkshop/**'
     pull_request:
       branches: ["main"]
       paths:
-        - 'Wingtips/**'
+        - 'Lab1/WingTipsWorkshop/**'
 
 jobs:
   build:
